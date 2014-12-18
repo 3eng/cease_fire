@@ -1,21 +1,11 @@
-#define LEFT_RIGHT AO
-#define UP_DOWN A1
-int up= 5;
-int down= 6;
-int left = 7;
-int right =8;
-
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  Serial.print(analogRead(left/right));
+  Serial.print(analogRead(A0));
   Serial.print("\t");
-  Serial.print(analogRead(up/down));
+  Serial.print(analogRead(A1));
   Serial.println("");
-  if (left/right > 550) digitalWrite (up, HIGH);  
-  if (left/right < 500) digitalWrite (down, HIGH);
- if (up/down > 550)     digitalWrite (left, HIGH);
-if (up/down < 400)  digitalWrite (right, HIGH);
+
 }
