@@ -1,11 +1,36 @@
+int UD; 
+int LR;
+
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  Serial.print(analogRead(A0));
+  UD=analogRead (A0);
+  LR=analogRead (A1);
+  
+  Serial.print(UD);
   Serial.print("\t");
-  Serial.print(analogRead(A1));
+  Serial.print(LR);
+  Serial.print("\t");
+  
+  
+  if (UD< 60) {
+    Serial.print ("forward");
+  }
+  else if (UD> 1000) {
+    Serial.print ("backward");
+    
+  }
+  else if (LR>1000) {
+    Serial.print ("left");
+  }
+  else if (LR<60) {
+    Serial.print ("right");
+  }
+  else {
+    Serial.print("stop");
+  }
   Serial.println("");
-
 }
+
