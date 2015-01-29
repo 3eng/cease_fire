@@ -1,0 +1,57 @@
+// make values bigger
+int relay1 = 1,
+    relay2 = 2;
+int UD; 
+int LR;
+void setup () {    
+    pinMode(relay2, OUTPUT);
+    pinMode(relay1, OUTPUT);
+    Serial.begin(9600);
+}
+
+void loop () {
+ /* digitalWrite(relay1, HIGH);
+  delay (500);
+  digitalWrite(relay2, HIGH);
+  delay (500);
+  digitalWrite(relay1, LOW);
+  delay (500);
+  digitalWrite(relay2, LOW);
+  delay(500);*/
+  
+  UD=analogRead (A2);
+  LR=analogRead (A1);
+  
+  Serial.print(UD);
+  Serial.print("\t");
+  Serial.print(LR);
+  Serial.print("\t");
+  
+  
+  if (UD< 60) {
+    Serial.print ("forward");
+    digitalWrite(relay1, HIGH);
+    digitalWrite(relay2, HIGH);
+    //both wheels on 
+  }
+ 
+  else if (LR>1000) {
+    Serial.print ("left");
+    //right wheel on left wheel off
+    digitalWrite(relay1, HIGH);
+    digitalWrite(relay2, LOW);
+  }
+  else if (LR<60) {
+    Serial.print ("right");
+    //left wheel on right wheel off 
+    digitalWrite(relay1, LOW);
+    digitalWrite(relay2, HIGH);
+  }
+  else {
+    Serial.print("stop");
+    //both wheels off 
+    digitalWrite(relay1, LOW);
+    digitalWrite(relay2, LOW);
+  }
+  Serial.println("");
+}
