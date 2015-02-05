@@ -1,6 +1,6 @@
 // make values bigger
 int relay1 = 1,
-    relay2 = 2;
+    relay2 = 0;
 int UD; 
 int LR;
 void setup () {    
@@ -10,14 +10,6 @@ void setup () {
 }
 
 void loop () {
- /* digitalWrite(relay1, HIGH);
-  delay (500);
-  digitalWrite(relay2, HIGH);
-  delay (500);
-  digitalWrite(relay1, LOW);
-  delay (500);
-  digitalWrite(relay2, LOW);
-  delay(500);*/
   
   UD=analogRead (A2);
   LR=analogRead (A1);
