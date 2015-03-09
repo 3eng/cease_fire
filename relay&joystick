@@ -1,6 +1,6 @@
-#define FORWARD digitalWrite(relay1, HIGH);\
+#define STOP    digitalWrite(relay1, HIGH);\
                 digitalWrite(relay2, HIGH)
-#define STOP    digitalWrite(relay1, LOW);\
+#define FORWARD digitalWrite(relay1, LOW);\
                 digitalWrite(relay2, LOW)
 #define LEFT    digitalWrite(relay1, HIGH);\
                 digitalWrite(relay2, LOW)
