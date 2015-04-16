@@ -9,10 +9,14 @@
 
 int relay1  = 0,
     relay2  = 1;
+    button = 2;
+   watergun = 13;
 
 void setup () {
     pinMode(relay1, OUTPUT);
     pinMode(relay2, OUTPUT);
+    pinMode (watergun, OUTPUT);
+    pinMode (button, OUTPUT);
 }
 
 void loop () {
@@ -48,4 +52,14 @@ void loop () {
     STOP;
   }
   Serial.println("");
+  if button=1
+  {
+    digitalWrite (watergun,HIGH);
+    Serial.print ("shoot");
+  }
+  else {
+    digitalWrite (watergun, LOW);
+  Serial.print ("don't shoot") 
+
+  {
 }
