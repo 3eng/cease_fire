@@ -1,31 +1,31 @@
-int rightbutton  = 2;
-int rightpin    = 5;
-int leftbutton = 1;
-int leftpin =3;
-int shooterbutton = 0;
-int shooterpin = 4;
+int rightbutton   = 2;
+int rightpin      = 5;
+int leftbutton    = 1;
+int leftpin       = 3;
+int shooterbutton = 7;
+int shooterpin    = 8;
 
 
    
 void goLeft () {
-   digitalWrite(leftbutton, HIGH);
-   digitalWrite(rightbutton, LOW);
-   Serial.print ("go left");
+   digitalWrite(leftpin, HIGH);
+   digitalWrite(rightpin, LOW);
+   Serial.print ("go left\t");
 }
 void goRight () {
-     digitalWrite(leftbutton, LOW);
-     digitalWrite(rightbutton, HIGH);
-     Serial.print ("go right"); 
+     digitalWrite(leftpin, LOW);
+     digitalWrite(rightpin, HIGH);
+     Serial.print ("go right\t"); 
 }
 void goForward () {
-  digitalWrite (leftbutton, HIGH);
-  digitalWrite (rightbutton, HIGH);
-    Serial.print ("go forward");
+  digitalWrite (leftpin, HIGH);
+  digitalWrite (rightpin, HIGH);
+    Serial.print ("go forward\t");
 }
 void Stop () {
-  digitalWrite (leftbutton, LOW);
-  digitalWrite (rightbutton, LOW);
-  Serial.print ("stop");
+  digitalWrite (leftpin, LOW);
+  digitalWrite (rightpin, LOW);
+  Serial.print ("stop\t");
 }
 
   
@@ -44,14 +44,13 @@ void setup () {
 void loop () {
 
   Serial.println("");
-  if (digitalRead (shooterbutton) == HIGH){
-  
-    digitalWrite (shooterpin,HIGH);
-    Serial.print ("shoot");
+  if (digitalRead(shooterbutton) == LOW){
+    digitalWrite (shooterpin, HIGH);
+    Serial.print ("shoot\t");
   }
   else {
     digitalWrite (shooterpin, LOW);
-  Serial.print ("don't shoot") ;
+    Serial.print ("don't shoot\t") ;
   }
   
   int left  = digitalRead(leftbutton);
