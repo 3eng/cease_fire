@@ -1,9 +1,9 @@
-int rightbutton   = 2;
-int rightpin      = 5;
-int leftbutton    = 1;
-int leftpin       = 3;
-int shooterbutton = 7;
-int shooterpin    = 8;
+int rightbutton   = 12;
+int rightpin      = 1;
+int leftbutton    = 11;
+int leftpin       = 0;
+int shooterbutton = 13;
+int shooterpin    = 2;
 
 
    
